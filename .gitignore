@@ -2,4 +2,9 @@
 .dart_tool/
 .idea/
 build/
+<<<<<<< HEAD
 test/
+=======
+test/
+.flutter-plugins-dependencies
+>>>>>>> 3839388 (remove tracked folder)

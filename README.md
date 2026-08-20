@@ -17,8 +17,12 @@
 > 待添加应用截图
 
 ## 🚀 快速开始
-
-### 环境要求
+1.安装teslamate，搜索github
+2.安装teslamateapi，搜索github
+3.安装软件
+4.在设置中填入teslamateapi的地址
+5.开始使用
+### 开发环境要求
 
 - Flutter SDK >= 3.13.0
 - Dart SDK >= 3.13.0
