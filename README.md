@@ -1,6 +1,6 @@
 # TeslaMate App
 
-一个基于 Flutter 开发的 TeslaMate 第三方移动端仪表盘应用，采用 Tesla 官方配色设计，提供车辆状态监控、行驶报表、充电记录等功能。
+一个基于 Flutter 开发的 TeslaMate 第三方移动端仪表盘应用，采用 Tesla 官方配色设计，提供车辆状态监控、行驶报表、充电记录、电池状态等功能。
 
 ## ✨ 特性
 
@@ -14,7 +14,9 @@
 
 ## 📸 截图
 
-> 待添加应用截图
+https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E7%8A%B6%E6%80%81.png
+https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E7%94%B5%E6%B1%A0.png
+https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E8%A1%8C%E7%A8%8B.png
 
 ## 🚀 快速开始
 1.安装teslamate，搜索github
