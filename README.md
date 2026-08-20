@@ -14,9 +14,11 @@
 
 ## 📸 截图
 
-![状态页面](https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E7%8A%B6%E6%80%81.png)
-![报表 - 电池](https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E7%94%B5%E6%B1%A0.png)
-![报表 - 行程](https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E8%A1%8C%E7%A8%8B.png)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E7%8A%B6%E6%80%81.png" width="30%" />
+  <img src="https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E7%94%B5%E6%B1%A0.png" width="30%" />
+  <img src="https://raw.githubusercontent.com/RuinLu/teslamate_app/refs/heads/main/resource/%E6%8A%A5%E8%A1%A8-%E8%A1%8C%E7%A8%8B.png" width="30%" />
+</div>
 
 ## 🚀 快速开始
 1.安装teslamate，搜索github
