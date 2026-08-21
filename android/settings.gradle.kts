@@ -11,13 +11,11 @@ pluginManagement {
     includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
-        // 🌟 阿里云国内镜像：加速插件下载，防超时
+        // 🌟 阿里云镜像 (注意 .kts 必须用 uri())
         maven { url = uri("https://maven.aliyun.com/repository/google") }
         maven { url = uri("https://maven.aliyun.com/repository/central") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
         maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
-        google()
-        mavenCentral()
-        gradlePluginPortal()
     }
 }
 
