@@ -1,9 +1,12 @@
 allprojects {
     repositories {
         // 🌟 阿里云镜像
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        maven { url = uri("https://maven.aliyun.com/repository/central") }
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }         // 代理 google()
+        maven { url = uri("https://maven.aliyun.com/repository/central") }       // 代理 mavenCentral()
+        maven { url = uri("https://maven.aliyun.com/repository/public") }        // central+jcenter 合集
+        maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") } // 代理插件门户
+        google()       // 国内镜像万一缺货，才兜底走官方（基本用不上）
+        mavenCentral()
     }
 }
 

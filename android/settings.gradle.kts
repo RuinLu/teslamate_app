@@ -16,6 +16,8 @@ pluginManagement {
         maven { url = uri("https://maven.aliyun.com/repository/central") }
         maven { url = uri("https://maven.aliyun.com/repository/public") }
         maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        google()       // 国内镜像万一缺货，才兜底走官方（基本用不上）
+        mavenCentral()
     }
 }
 
