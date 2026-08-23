@@ -386,7 +386,7 @@ class _StatusPageState extends State<StatusPage> {
   ///   - 胎压 ≤ 0       → 灰色占位符（传感器未上报，避免误报红）
   Widget _tpmsCell(String label, double pressure) {
     final bool noData = pressure <= 0;          // 传感器未上报
-    final bool low = !noData && pressure < 2.5; // 🌟 低胎压阈值：2.5 bar
+    final bool low = !noData && pressure < 2.6; // 🌟 低胎压阈值：2.6 bar
 
     // 数值颜色：红 = 异常 / 绿 = 正常 / 灰 = 无数据
     final Color valueColor =
