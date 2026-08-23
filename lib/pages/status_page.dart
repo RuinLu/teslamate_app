@@ -379,18 +379,58 @@ class _StatusPageState extends State<StatusPage> {
     );
   }
 
-  /// 🛞 单个胎压小格子
-  Widget _tpmsCell(String label, double value) {
+  /// 🧱 【胎压小格】显示单个车轮的胎压
+  /// 🌟 异常语义（全局统一）：红色只留给异常值
+  ///   - 胎压 < 2.5 bar  → 红色警示 + 淡红背景 + 警告小图标
+  ///   - 胎压正常       → 绿色（正常态颜色）
+  ///   - 胎压 ≤ 0       → 灰色占位符（传感器未上报，避免误报红）
+  Widget _tpmsCell(String label, double pressure) {
+    final bool noData = pressure <= 0;          // 传感器未上报
+    final bool low = !noData && pressure < 2.5; // 🌟 低胎压阈值：2.5 bar
+
+    // 数值颜色：红 = 异常 / 绿 = 正常 / 灰 = 无数据
+    final Color valueColor =
+        low ? Colors.red : (noData ? Colors.grey : Colors.green);
+
     return Expanded(
-      child: Row(
-        children: [
-          const Icon(Icons.circle, size: 10, color: Colors.green),
-          const SizedBox(width: 8),
-          Text(label, style: const TextStyle(color: Colors.grey, fontSize: 13)),
-          const SizedBox(width: 8),
-          Text('${value.toStringAsFixed(1)} bar',
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-        ],
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        decoration: BoxDecoration(
+          // 🌟 低胎压时铺一层淡红背景强化警示；正常时完全透明
+          color: low ? Colors.red.withValues(alpha: 0.08) : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          children: [
+            // 标签行：低胎压时前面加一个红色小警告图标
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (low)
+                  const Icon(Icons.warning_amber_rounded,
+                      size: 14, color: Colors.red),
+                if (low) const SizedBox(width: 4),
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            // 数值行：无数据显示 '--'，有数据显示 x.x bar
+            Text(
+              noData ? '--' : '${pressure.toStringAsFixed(1)} bar',
+              style: TextStyle(
+                fontSize: 14,
+                color: valueColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
