@@ -1,40 +1,25 @@
 ```
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-dist/
-build/
-target/
-.dart_tool/
-.flutter-plugins-dependencies
-
 # Dependencies
-.venv/
-venv/
-node_modules/
-.julia/
-zig-cache/
+.dart_tool/
+.build/
+.pub/
 
 # Logs and temp files
 *.log
 *.tmp
-*.swp
-*.swo
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# Editors
+# Editor/IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# System files
+# OS
 .DS_Store
 Thumbs.db
 
@@ -43,22 +28,7 @@ coverage/
 htmlcov/
 .coverage
 
-# Python specific
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-.Python
-*.so
-*.egg-info/
-.eggs/
-
-# Testing
-.pytest_cache/
-.mypy_cache/
-.hypothesis/
-
-# Compression
+# Compressed files
 *.zip
 *.gz
 *.tar
@@ -77,8 +47,4 @@ __pycache__/
 *.Z
 *.lz
 *.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
 ```

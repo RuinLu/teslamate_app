@@ -165,6 +165,9 @@ class _StatusPageState extends State<StatusPage> {
         ? _statusResponse!.carName
         : (_currentCar?.name ?? '我的车辆');
 
+    // 🚙 车型：从车辆列表中获取 model 字段
+    final carModel = _currentCar?.model;
+
     return SingleChildScrollView(
       physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
@@ -175,7 +178,7 @@ class _StatusPageState extends State<StatusPage> {
               BoxConstraints(maxWidth: Responsive.contentMaxWidth(context)),
           child: Column(
             children: [
-              // ========== 🚗 车辆名称标题 ==========
+              // ========== 🚗 车型 + 车辆名称标题 ==========
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Row(
@@ -184,10 +187,26 @@ class _StatusPageState extends State<StatusPage> {
                     Icon(Icons.directions_car,
                         color: theme.colorScheme.primary),
                     const SizedBox(width: 8),
-                    Text(
-                      carName,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            carName,
+                            style: const TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          if (carModel != null && carModel.isNotEmpty) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              carModel,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: theme.colorScheme.onSurfaceVariant.withOpacity(0.7)),
+                            ),
+                          ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
